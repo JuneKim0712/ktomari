@@ -21,9 +21,9 @@ def on_scroll(x, y, dx, dy):
 def on_press(key):
     global globalDevice, keyboard_listener, mouse_listener
     if str(key) == 'Key.esc':
-        if globalDevice == ('keyboard' or 'all'):
+        if globalDevice == ('keyboard') or globalDevice == ('all'):
             keyboard_listener.stop()
-        if globalDevice == ('mouse' or 'all'):
+        if globalDevice == 'mouse' or globalDevice == ('all'):
             mouse_listener.stop()
         return
     if globalDevice == 'keyboard' or 'all':
@@ -69,4 +69,4 @@ def Recording(device='all'):
     print('recorded successfully')
     return
 
-Recording('keyboard')
+Recording()
